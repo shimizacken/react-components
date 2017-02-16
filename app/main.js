@@ -1,1 +1,1 @@
-import App from './app.jsx';
+import World from './app.jsx';

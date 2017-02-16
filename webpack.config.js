@@ -7,17 +7,18 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
     },
-     plugins: [
+     //plugins: [
         //new webpack.optimize.CommonsChunkPlugin({ name: "vendor", filename: "vendor.bundle.js" }),
         //new HappyPack({ loaders: ['babel-loader?presets[]=es2015']}),
-    ],
+    //],
      module: {
          loaders: [
              {
-                 test: /\.js$/,
-                 loader: 'babel-loader',
-                 query: {
-                    presets: ['es2015', 'react']
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015'],
                 }
              }
          ]
@@ -25,5 +26,6 @@ module.exports = {
      devServer: {
          inline: true,
          port: 8989
-     }
+     },
+    watch: true
 };

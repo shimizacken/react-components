@@ -10,7 +10,7 @@ class Header extends React.Component {
 
         const x = 20;
 
-        return <h1 data-name="header1" style={headerStyle}>Hallo! { x == 20 ? 'True!' : 'False' }</h1>
+        return <h1 data-name="header1" style={headerStyle}>Hallo!  { x == 20 ? 'True!' : 'False' }</h1>
     }
 }
 

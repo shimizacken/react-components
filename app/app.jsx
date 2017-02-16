@@ -1,13 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Header from './header.jsx'
 import Content from './content.jsx'
  
-class World extends React.Component {
+class App extends React.Component {
   render() {
-    return <Header />
+    return 
+        <div>
+            <Header />
+            <Content />
+        </div>
   }
 }
- 
-ReactDOM.render(<World/>, document.getElementById('world'));
-ReactDOM.render(<Content/>, document.getElementById('world'));
+
+export default App;

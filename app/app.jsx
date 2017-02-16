@@ -5,9 +5,9 @@ import TableRow from './tableRow.jsx';
 
 class App extends React.Component {
 
-    constructor() {
+    constructor(props) {
 
-        super();
+        super(props);
 
         this.state = {
             data:
@@ -36,10 +36,11 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header headerProp={"My Portal"} />
+                <h2>{this.state.data[0].name}</h2>
                 <table>
                     <tbody>
-                        {this.state.data.map((person, i) => <TableRow key = {i} data = {person} />)}
+                        {this.state.data.map((person, i) => <TableRow key={i} data={person} />)}
                     </tbody>
                 </table>
             </div>

@@ -9768,10 +9768,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
-    function App() {
+    function App(props) {
         _classCallCheck(this, App);
 
-        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
         _this.state = {
             data: [{
@@ -9797,7 +9797,12 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_header2.default, null),
+                _react2.default.createElement(_header2.default, { headerProp: "My Portal" }),
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    this.state.data[0].name
+                ),
                 _react2.default.createElement(
                     'table',
                     null,
@@ -22145,8 +22150,7 @@ var Header = function (_React$Component) {
             return _react2.default.createElement(
                 'h1',
                 { 'data-name': 'header1', style: headerStyle },
-                'Hallo!  ',
-                x == 20 ? 'True!' : 'False'
+                this.props.headerProp
             );
         }
     }]);
